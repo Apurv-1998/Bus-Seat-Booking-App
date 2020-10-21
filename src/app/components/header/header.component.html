@@ -1,0 +1,15 @@
+<div class = "main-content">
+
+    <div *ngIf = "!checkLocalStorage()">
+        <button (click) = "signup()">Signup</button>
+        <br/>
+        <button (click) = "login()">Login</button>
+    </div>
+
+    <div *ngIf = "checkLocalStorage()">
+        <button (click) = "logout()">Logout</button>
+    </div>
+
+</div>
+
+
