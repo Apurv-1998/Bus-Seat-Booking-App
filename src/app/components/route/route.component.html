@@ -1,0 +1,15 @@
+<hr/>
+<div>
+    <form [formGroup] = "routeForm" (ngSubmit) = "onSubmit()">
+        <div> Source: </div>
+        <input formControlName = "source" type = "text" placeholder="enter source city"><br/>
+        <div> Destination: </div>
+        <input formControlName = "destination" type = "text" placeholder="enter destination city"><br/><br/>
+
+        <button>Search Buses</button>
+    </form>
+</div>
+<hr/>
+<div>
+    <app-bus [receivedBusResponse] = "response" [UserId] = "userId"></app-bus>
+</div>

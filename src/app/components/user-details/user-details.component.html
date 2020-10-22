@@ -1,1 +1,14 @@
-<p>user-details works!</p>
+<hr/>
+<div>
+
+    <b><u>UserName: {{response.firstName}} {{response.lastName}}</u></b><i>(Created: {{response.duration}})</i>
+
+    <div>
+        <i>Date Of Birth -> {{response.dob | date: "fullDate"}}</i><br/>
+        <i>Email -> {{response.email}}</i><br/>
+        <i>Registered Mobile Number -> {{response.mobileNumber}}</i><br/>
+
+        <button (click) = "book(response.userId)">Book A Bus</button>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+<div>
+
+    <div *ngFor = "let temp of receivedBusResponse">
+        <ol>
+            <li>
+                <b><u><h2>Bus Name -><a routerLink = "/busDetails/{{temp.busNumber}}"> {{temp.busName}} </a></h2></u></b><br/><br/>
+                <div><span><b>Bus Details</b></span><br/><br/>
+                    <p>Bus Number: {{temp.busNumber}}</p>
+                    <p>Pickup Point: {{temp.pickupPoint}}</p>
+                    <p>Drop Point: {{temp.dropPoint}}</p>
+                    <p>Start Time: {{temp.journeyStartTime}}</p>
+                    <p>End Time: {{temp.journeyEndTime}}</p>
+                    <p>Number of Stops: {{temp.numberOfStops}}</p>
+                    <p>Number of Seats: {{temp.numberOfSeats}}</p>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+</div>

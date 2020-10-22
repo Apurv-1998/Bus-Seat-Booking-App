@@ -16,10 +16,13 @@ import { SignupComponent } from './components/signup/signup.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { RouteComponent } from './components/route/route.component';
+import { BusComponent } from './components/bus/bus.component';
 
 
   const routes: Routes = [
 
+    {path: 'booking/:userId', component: RouteComponent},
     {path: 'userDetails/:userId', component: UserDetailsComponent},
     {path: "signup", component: SignupComponent},
     {path: "login", component: LoginComponent}
@@ -33,7 +36,9 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     SignupComponent,
     HeaderComponent,
     LoginComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    RouteComponent,
+    BusComponent
   ],
   imports: [
     BrowserModule,
