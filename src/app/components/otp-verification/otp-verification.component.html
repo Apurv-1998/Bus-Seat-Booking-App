@@ -1,0 +1,17 @@
+<hr/>
+<div>
+    <form [formGroup] = "otpForm" (ngSubmit) = "onSubmit()">
+        <div>Country Code:</div>
+        <input formControlName = "countryCode" type = "text" placeholder="+00"><br/>
+        <div>Mobile Number:</div>
+        <input formControlName = "mobileNumber" type = "text" placeholder="0000000000"><br/>
+        <div *ngIf = "checkLocalStorage()">
+            <div>OTP:</div>
+            <input formControlName = "otp" type = "password"><br/>
+        </div><br/>
+        <button>Get OTP</button><br/>
+    </form>
+    <div *ngIf = "checkLocalStorage()">
+        <button (click) = "verifyOtp()">Verify OTP</button>
+    </div>
+</div>

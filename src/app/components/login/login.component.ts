@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   userId: string;
   response: UserRest;
   isVerified: string;
+  isMobileVerified: string;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
@@ -59,9 +60,11 @@ export class LoginComponent implements OnInit {
         this.response = data;
         this.userId = this.response.userId;
         this.isVerified = this.response.verified.toString();
+        this.isMobileVerified = this.response.mobileVerified.toString();
         this.router.navigate(['/userDetails/'+this.userId]);
         this.toaster.success("Login Successful");
         localStorage.setItem("VERIFIED_USER",this.isVerified);
+        localStorage.setItem("MOBILE_VERIFIED",this.isMobileVerified);
       },
       error=>{
         this.toaster.error("Invalid credentials!!!");

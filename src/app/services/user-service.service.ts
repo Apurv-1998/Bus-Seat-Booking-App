@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginPayload } from '../common/login-payload';
+import { OtpPayload } from '../common/otp-payload';
 import { SignupPayload } from '../common/signup-payload';
 import { UserRest } from '../common/user-rest';
 
@@ -36,5 +37,20 @@ export class UserServiceService {
 
     return this.httpClient.get<UserRest>(searchUrl);
 
+  }
+
+  sendOTP(payload: OtpPayload,userId: string): Observable<any>{
+
+    const searchUrl = `${this.baseUrl}/users/${userId}/sendOtp`;
+
+    return this.httpClient.post(searchUrl,payload);
+
+  }
+
+  verifyOTP(payload: OtpPayload,userId: string): Observable<any>{
+
+    const searchUrl = `${this.baseUrl}/users/${userId}/verifyOtp`;
+
+    return this.httpClient.put(searchUrl,payload);
   }
 }

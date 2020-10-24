@@ -14,6 +14,7 @@ export class UserDetailsComponent implements OnInit {
   userId: string;
   response: UserRest;
   hasUserId: boolean;
+  isMobileVerified: string;
 
   constructor(private userService: UserServiceService,
               private formBuilder: FormBuilder,
@@ -58,6 +59,20 @@ export class UserDetailsComponent implements OnInit {
 
   book(id: string){
     this.router.navigate(['/booking/'+id]);
+  }
+
+  checkLocalStorage(): boolean{
+
+    this.isMobileVerified = localStorage.getItem("MOBILE_VERIFIED");
+
+    return this.isMobileVerified === "true";
+
+  }
+
+  routeToOTPVerification(userId: string){
+
+    localStorage.setItem("OTP_SENT","false");
+    this.router.navigate(['/verifyMobile/'+userId]);
   }
 
 }

@@ -10,5 +10,6 @@ export class UserRest {
     duration: string;
     lastUpdatedTime: string;
     verified: boolean;
+    mobileVerified: boolean;
 
 }

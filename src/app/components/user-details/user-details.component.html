@@ -9,6 +9,10 @@
         <i>Registered Mobile Number -> {{response.mobileNumber}}</i><br/>
 
         <button (click) = "book(response.userId)">Book A Bus</button>
+
+        <div *ngIf = "!checkLocalStorage()">
+            <button (click) = "routeToOTPVerification(response.userId)">Verify Mobile Number</button>
+        </div>
     </div>
 
 </div>
